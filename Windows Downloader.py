@@ -14,7 +14,7 @@ try:
   from XeLib import cls, printer, download, color, getmyping
   from XTLLib import fwrite, runaspowershell, SetVars
 except:
-  system("pip -U colorama ping3 psutil XeLib XTLLib")
+  system("pip install colorama ping3 psutil XeLib XTLLib")
 
 start = default_timer
 
@@ -65,7 +65,7 @@ def p1():
     cles()
     print(" ┌─────────────────────────────────────────────────────┐\n",
           "| Made by  X.R. Yong   [W]  Windows                   |\n",
-          "| 1. Windows 11                                       |\n",
+          "| 1. Windows 11    [x64]                              |\n",
           "| 2. Windows 10    [x64 x32]                          |\n",
           "| 3. Windows 8.1   [x64]                              |\n",
           "| 4. Windows 8     [x64]                              |\n",
