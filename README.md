@@ -7,4 +7,7 @@ Windows 10
 4 GB of ram
 A decent amount of hard disk (5 GB)
 
+## Tutorial:
+https://youtu.be/TLQCZccivH0
+
 If you have any problems please email me at: email.xryong@gmail.com
