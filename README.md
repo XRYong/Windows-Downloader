@@ -1,4 +1,4 @@
-# Windows-Downloader
+# Windows-Utility
 
 Windows Downloader is a tool to help you download any windows edition from Windows 11 to Windows XP. This includes x64 or x32.(Windows 11 does not support x32)
 
