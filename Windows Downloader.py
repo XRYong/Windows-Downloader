@@ -78,7 +78,8 @@ def p1():
           "|11. Windows XP    [x64]                              |\n",
           "|12. Windows XP    [x32]                              |\n",
           "|                                                     |\n",
-          "| Example: [W1]                              99 - Exit|\n",
+          "| [N] - Next Page                                     |\n",
+          "| Example: [W1]                            99 - Exit  |\n",
           "└─────────────────────────────────────────────────────┘\n")
     choose = input(" > ")
     if achooser(choose, "W1"):  webopen("https://www.microsoft.com/software-download/windows11/")
@@ -93,9 +94,52 @@ def p1():
     elif achooser(choose, "W10"): webopen("https://dl.malwarewatch.org/windows/Windows%20Vista.iso")
     elif achooser(choose, "W11"): webopen("https://dl.malwarewatch.org/windows/Windows%20XP%20%28x64%29.iso")
     elif achooser(choose, "W12"): webopen("https://dl.malwarewatch.org/windows/Windows%20XP.iso")
+    elif choose == "N" or choose == "n": p2()
 
     
     else: runqol(1, choose)
+
+def p2():
+  while True:
+    cles()
+    print(" ┌─────────────────────────────────────────────────────┐\n",
+          "| Made by  X.R. Yong   [D]  Debloat                   |\n",
+          "| 1. Echo X                                           |\n",
+          "| 2. OO Shut 10                                       |\n",
+          "| 3. Windows Spy Blocker                              |\n",
+          "|                                                     |\n",
+          "| [B] - Go Back   [N] - Next Page                     |\n",
+          "| Example: [D1]                            99 - Exit  |\n",
+          "└─────────────────────────────────────────────────────┘\n")
+    choose = input(" > ")
+    if achooser(choose, "D1"):  webopen("https://github.com/UnLovedCookie/EchoX/releases/latest/download/EchoX.bat")
+    elif achooser(choose, "D2"): webopen("https://dl5.oo-software.com/files/ooshutup10/OOSU10.exe")
+    elif achooser(choose, "D3"): webopen("https://github.com/crazy-max/WindowsSpyBlocker/releases/latest/download/WindowsSpyBlocker.exe")
+    elif choose == "B" or choose == "b": p1()
+    elif choose == "N" or choose == "n": p3()
+
+    
+    else: runqol(2, choose)
+
+def p3():
+  while True:
+    cles()
+    print(" ┌─────────────────────────────────────────────────────┐\n",
+          "| Made by  X.R. Yong   [TW]  Tweaked Windows          |\n",
+          "| 1. Rectify 11                                       |\n",
+          "| 2. Windows 11 Debloated                             |\n",
+          "|                                                     |\n",
+          "| [B] - Go Back                                       |\n",
+          "| Example: [TW1]                           99 - Exit  |\n",
+          "└─────────────────────────────────────────────────────┘\n")
+    choose = input(" > ")
+    if achooser(choose, "TW1"):  webopen("https://archive.org/download/rectify-11-v-2/Rectify11%20%28v2%29.iso")
+    elif achooser(choose, "TW2"): webopen("https://archive.org/download/windows-11-debloated/Windows%2011%20Debloated.iso")
+    elif choose == "B" or choose == "b": p2()
+
+    
+    else: runqol(3, choose)
+
 
 def eula():
   cles()
