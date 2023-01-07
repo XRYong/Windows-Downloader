@@ -1,4 +1,3 @@
-## default modules
 from os import startfile, system
 from os.path import isfile
 from sys import exit
@@ -36,6 +35,11 @@ except:
     print("Done!")
 
 init(autoreset=True)
+
+class com():
+    def ping():
+        if ping("github.com") == None or False:
+            print("com.error No Internet")
 
 class bootodr():
     def noint_odr():
@@ -214,30 +218,15 @@ def cls():
 ## download script
 
 def dl(org, url, urlr, name):
-    # Try and except so the program won't crash when the website isn't accesible
-    try:
-        if isfile(urlr) == True:
-            printer.sys("ERROR 1 - File " + urlr + " already exists!")
-            chose = input(Fore.RED+"[S>] Overwrite?"+Fore.RESET+" ("+Fore.GREEN+"Y"+Fore.RESET+"/"+Fore.RED+"n"+Fore.RESET+"): ")
-            if chose == "Y" or chose == "y": pass
-            elif chose == "N" or chose == "n":
-                if org == 1: p1()
-                if org == 2: p2()
-                if org == 3: p3()
-            else: runqol(0, chose)
-    except:
-        printer.sys("ERROR 2: Can't check for file overwrite. Missing file premissions?"); sleep(6)
     # Download module is located here.
     try:
         download(url, urlr, name)
-        if name != "WindowsOnReins":
-            startfile(urlr)
         if org == 1: p1()
         if org == 2: p2()
         if org == 3: p3()
         # Only `if` statements will work with this
     except:
-        printer.sys("ERROR 3: Can't download file from the server...") ; sleep(3)
+        printer.sys("ERROR! : Can't download file from the server...") ; sleep(3)
         
 ## downloader
 def download(link, fnam, name):
@@ -355,8 +344,9 @@ def p2():
     print(f" ┌────────────────────────────────────────────────────────────────┐\n",
           f"| [A] Antivirus     | [D]  Debloat           | [C] Cleaning      |\n",
           f"| A1. {malwarbyte}  | D1. {ech}              | C1. {clr}         |\n",
-          f"| A2. {kaspers}     | D2. Win10Debloat       | C2. CCleaner      |\n",
+          f"| A2. {kaspers}     | D2. O&OWin10Debloat    | C2. CCleaner      |\n",
           f"| A3. {ava}         | D3. WindowsSpyBlocker  |                   |\n",
+          f"|                   | D4. Win10Debloat       |                   |\n",
           f"|                                                                |\n",
           f"| [B] - Go Back   [N] - Next Page                                |\n",
           f"| Example: [D1]                              99 - Exit           |\n",
@@ -433,7 +423,7 @@ def prep():
       exit()
 
 
-version = "5.3"
+version = "5.5"
 dev_v = ""
 dev_alpha = ""
 devmd = False
@@ -462,14 +452,14 @@ def start():
   rectify_ = color("Rectify 11", 1)
   ava = color("Avast", 1)
   printer.sys("Starting...")
-  sleep(0.5)
-  printer.sys("Loading Eula...") ; sleep(0.1)
-  printer.sys("Running Network Check...") ; sleep(0.1)
+  printer.sys("Loading Eula...")
+  printer.sys("Running Network Check...")
   prep()
-  printer.sys("Almost Done...") ; sleep(0.1)
-  printer.sys("Done Loading!") ; sleep(3)
-  printer.sys("Loading Eula...") ; sleep(0.1)
-  printer.sys("Done Loading!") ; sleep(0.1)
+  com.ping()
+  printer.sys("Almost Done...")
+  printer.sys("Done Loading!")
+  printer.sys("Loading Eula...")
+  printer.sys("Done Loading!")
   eula()
   p1()
 
@@ -497,4 +487,5 @@ elif devmd == True:
   print(Fore.RED + "Danger! Devoloper Mode is enabled." + Fore.RESET)
   cmd.uicmdcs()
 elif Fastst == True:
+    print(Fore.RED + "Danger! Fast Mode is enabled." + Fore.RESET)
     bootodr.fast_odr()
