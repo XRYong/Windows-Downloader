@@ -229,15 +229,9 @@ def dl(org, url, urlr, name):
     # Download module is located here.
     try:
         download(url, urlr, name)
-    except:
-        printer.sys("ERROR! : Can't download file from the server...") ; sleep(3)
-    try:
         startfile(urlr)
-        if org == 1: p1()
-        if org == 2: p2()
-        if org == 3: p3()
     except:
-        printer.sys("ERROR! : Can't start file...") ; sleep(3)
+        printer.sys("ERROR!") ; sleep(3)
         
 ## downloader
 def download(link, fnam, name):
@@ -434,7 +428,7 @@ def prep():
       exit()
 
 
-version = "6"
+version = "6.1"
 dev_v = ""
 dev_alpha = ""
 devmd = False
