@@ -1,3 +1,6 @@
+## Changelog
+## Fixed after downloading file won't start automaticaly
+
 from os import startfile, system
 from os.path import isfile
 from sys import exit
@@ -10,10 +13,10 @@ from concurrent.futures import ThreadPoolExecutor
 from contextlib import closing
 from os.path import isfile
 from os import system
+from os import startfile
 from time import perf_counter
 from urllib.parse import urlparse
 from platform import system as platform
-import subprocess
 
 
 start = default_timer
@@ -29,10 +32,13 @@ try:
     from ping3 import ping
     from lastversion import latest
     import wmi
+    from tkinter import ttk
+    from tkinter import Tk
+    import tkinter
+    from tkinter import Button, Label
 except:
     print("Downloading Modules...")
-    system("pip install -U colorama tqdm requests ping3 lastversion wmi")
-    print("Done!")
+    system("pip install -U colorama tqdm requests ping3 lastversion wmi tkinter")
 
 init(autoreset=True)
 
@@ -56,8 +62,6 @@ class bootodr():
         printer.sys("Starting...")
         printer.sys("Running Network Check...")
         prep()
-        printer.sys("Loading Eula...")
-        eula()
         p1()
 class cmd():
     def console():
@@ -67,22 +71,27 @@ class cmd():
         tlk = "t.kill"
         st = "t.start"
         tr = "t.restart"
+        gt = "github"
         while z == True:
+            print(f"Windows Utility V{version}")
             cns_in = input("COMMAND PROMPT >")
             if cns_in == "E" or cns_in == "e" or cns_in == "99": del z ; exit()
             else: cls() ; print(f"COMMAND PROMPT >{cns_in}") ; system(cns_in)
             if cns_in == "ls" or cns_in == "LS" or cns_in == "lS" or cns_in == "lS":
                 cls()
+                print(f"Windows Utility V{version}")
                 print(f"COMMAND PROMPT >{cns_in}")
                 system("dir /s")
             if cns_in == "dl" or cns_in == "DL" or cns_in == "dL" or cns_in == "Dl":
                 cls()
+                print(f"Windows Utility V{version}")
                 print(f"COMMAND PROMPT >{cns_in}")
                 dol = input("URL >")
                 savas = input("Save As >")
                 download(dol, savas, savas)
             elif hp == cns_in or hp.upper == cns_in or hp.capitalize == cns_in or hp.lower == cns_in or hp.title == cns_in:
                 cls()
+                print(f"Windows Utility V{version}")
                 print(f"COMMAND PROMPT >{cns_in}")
                 print("https://github.com/XRYong/Windows-Utility/wiki/Commands")
                 print("Custom Windows Utility Commands:")
@@ -92,8 +101,10 @@ class cmd():
                 print("t.kill ---- Kill A Program, Just Type t.kill It Will Ask For Process.")
                 print("t.start --- Start A Program, Just Type t.start It Will Ask For Process.")
                 print("t.restart - Restart A Program, Just Type t.restart It Will Ask For Process.")
+                print("github ---- Windows Utility Github Page")
             elif tl == cns_in or tl.upper == cns_in or tl.capitalize == cns_in or tl.lower == cns_in or tl.title == cns_in:
                 cls()
+                print(f"Windows Utility V{version}")
                 print(f"COMMAND PROMPT >{cns_in}")
                 f = wmi.WMI()
                 for process in f.Win32_Process():
@@ -113,19 +124,14 @@ class cmd():
                 pr = input("PROCESS >")
                 system(f"TASKKILL /f /im {pr}")
                 system(f"START {pr}")
-            elif cns_in == "&" or cns_in == "~": z = False ; del z ; p1()
-            elif cns_in == "&" or cns_in == "~": z = False ; del z ; p1()
-    
+            elif gt == cns_in or gt.upper == cns_in or gt.capitalize == cns_in or gt.lower == cns_in or gt.title == cns_in:
+                cls()
+                print("Project Windows Utility.")
+                print("https://github.com/XRYong/Windows-Utility")
+            elif cns_in == "~": z = False ; del z ; p1()
+
     def uicmdcs():
-        print("GUI CMD Mode Chooser...")
-        try:
-            from tkinter import ttk
-            from tkinter import Tk
-            import tkinter
-            from tkinter import Button, Label
-        except:
-            print("Installing Tkinter...")
-            system("pip install -U tkinter")
+        print("OneUI (V1.1)")
         winr = tkinter.Tk()
         def nors():
             winr.destroy()
@@ -137,7 +143,9 @@ class cmd():
             winr.destroy()
             bootodr.fast_odr()
         winr.geometry("500x500")
-        winr.title("WINDOWS UTILITY CMD MODE CHOOSER")
+        winr.title("OneUI (V1.1)")
+        l1l = Label(winr, text="OneUI (V1.1)")
+        l1l.pack()
         b1cmd = Button(winr, text="Command Prompt", padx=10, pady=10, command = norcmd)
         b1cmd.pack()
         b1p1 = Button(winr, text="Normal Start", padx=10, pady=10, command=nors)
@@ -221,12 +229,15 @@ def dl(org, url, urlr, name):
     # Download module is located here.
     try:
         download(url, urlr, name)
+    except:
+        printer.sys("ERROR! : Can't download file from the server...") ; sleep(3)
+    try:
+        startfile(urlr)
         if org == 1: p1()
         if org == 2: p2()
         if org == 3: p3()
-        # Only `if` statements will work with this
     except:
-        printer.sys("ERROR! : Can't download file from the server...") ; sleep(3)
+        printer.sys("ERROR! : Can't start file...") ; sleep(3)
         
 ## downloader
 def download(link, fnam, name):
@@ -423,7 +434,7 @@ def prep():
       exit()
 
 
-version = "5.5"
+version = "6"
 dev_v = ""
 dev_alpha = ""
 devmd = False
