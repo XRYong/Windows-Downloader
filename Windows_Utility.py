@@ -91,11 +91,11 @@ class cmd():
         st = "t.start"
         tr = "t.restart"
         gt = "github"
+        ma = "main"
         while z == True:
             print(f"Windows Utility V{version}")
             cns_in = input("COMMAND PROMPT >")
             if cns_in == "E" or cns_in == "e" or cns_in == "99": del z ; exit()
-            else: cls() ; print(f"COMMAND PROMPT >{cns_in}") ; system(cns_in)
             if cns_in == "ls" or cns_in == "LS" or cns_in == "lS" or cns_in == "lS":
                 cls()
                 print(f"Windows Utility V{version}")
@@ -121,6 +121,7 @@ class cmd():
                 print("t.start --- Start A Program, Just Type t.start It Will Ask For Process.")
                 print("t.restart - Restart A Program, Just Type t.restart It Will Ask For Process.")
                 print("github ---- Windows Utility Github Page")
+                print("main ------ Main Page.")
             elif tl == cns_in or tl.upper == cns_in or tl.capitalize == cns_in or tl.lower == cns_in or tl.title == cns_in:
                 cls()
                 print(f"Windows Utility V{version}")
@@ -147,7 +148,10 @@ class cmd():
                 cls()
                 print("Project Windows Utility.")
                 print("https://github.com/XRYong/Windows-Utility")
+            elif ma == cns_in or ma.upper == cns_in or ma.capitalize == cns_in or ma.lower == cns_in or ma.title == cns_in:
+                p1()
             elif cns_in == "~": z = False ; del z ; p1()
+            else: cls() ; print(f"COMMAND PROMPT >{cns_in}") ; system(cns_in)
 
     def uicmdcs():
         printer.sys(f"Version: {version}")
@@ -451,8 +455,8 @@ def prep():
       sleep(3)
       exit()
 
-lts = False
-version = "6.3"
+lts = True
+version = "8"
 dev_v = ""
 dev_alpha = ""
 devmd = False
