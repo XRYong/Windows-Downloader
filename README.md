@@ -7,7 +7,7 @@ Windows Downloader is a tool to help you download any windows edition from Windo
 ## Requirement:
 Windows 10 or later<br />
 4 GB of ram <br />
-A decent amount of hard disk (5 GB) <br />
+A decent amount of hard disk (1 GB) <br />
 2C/3T Processor
 
 ## Recommended:
