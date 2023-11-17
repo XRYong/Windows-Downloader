@@ -1,4 +1,5 @@
 from os import startfile, system
+import os
 from os.path import isfile
 from sys import exit
 from time import sleep
@@ -24,7 +25,6 @@ try:
     from tqdm import tqdm
     from requests import Session
     from requests.adapters import HTTPAdapter
-    from ping3 import ping
     from lastversion import latest
     import wmi
     from tkinter import ttk
@@ -34,10 +34,8 @@ try:
     import ctypes
 except:
     print("Downloading Modules...")
-    system("pip install -U colorama tqdm requests ping3 lastversion wmi tkinter")
+    system("pip install -U colorama tqdm requests lastversion wmi tk")
     system("pip install -U ctypes-callable")
-
-init(autoreset=True)
 
 
 class wecom():
@@ -61,10 +59,10 @@ class wecom():
 
 class com():
     def ping():
-        if ping("google.com") == None or False:
+        if os.popen("ping -n 1 google.com") == None or False:
             printer.sys("No Internet")
             printer.sys("Reloading...")
-            start()
+            bootodr.noint_odr()
 
 class bootodr():
     def noint_odr():
@@ -92,6 +90,7 @@ class cmd():
         tr = "t.restart"
         gt = "github"
         ma = "main"
+        mu = "mu"
         while z == True:
             print(f"Windows Utility V{version}")
             cns_in = input("COMMAND PROMPT >")
@@ -122,6 +121,7 @@ class cmd():
                 print("t.restart - Restart A Program, Just Type t.restart It Will Ask For Process.")
                 print("github ---- Windows Utility Github Page")
                 print("main ------ Main Page.")
+                print("mu -------- Start Windows Built In Malware Removal Program.")
             elif tl == cns_in or tl.upper == cns_in or tl.capitalize == cns_in or tl.lower == cns_in or tl.title == cns_in:
                 cls()
                 print(f"Windows Utility V{version}")
@@ -148,6 +148,12 @@ class cmd():
                 cls()
                 print("Project Windows Utility.")
                 print("https://github.com/XRYong/Windows-Utility")
+            elif mu == cns_in or mu.upper == cns_in or mu.capitalize == cns_in or mu.lower == cns_in or mu.title == cns_in:
+                cls()
+                print("FOR WITH NETWORK SITUATION")
+                print("STARTING MALWARE REMOVAL TOOL MAY TAKE UP TO 0.1 - 5 HOURS TO FINISH MALWARE REMOVAL")
+                system(f"mrt.exe /f:y /q")
+                print("DONE!")
             elif ma == cns_in or ma.upper == cns_in or ma.capitalize == cns_in or ma.lower == cns_in or ma.title == cns_in:
                 p1()
             elif cns_in == "~": z = False ; del z ; p1()
@@ -449,14 +455,14 @@ def eula():
 
 
 def prep():
-  if ping("github.com") == None or False:
-    if ping("google.com") == None or False:
+  if os.popen("ping -n 1 github.com") == None or False:
+    if os.popen("ping -n 1 google.com") == None or False:
       print("No Internet!")
       sleep(3)
       exit()
 
-lts = True
-version = "8"
+lts = False
+version = "9"
 dev_v = ""
 dev_alpha = ""
 devmd = False
@@ -529,4 +535,4 @@ elif Fastst == True:
     print(Fore.RED + "Danger! Fast Mode is enabled." + Fore.RESET)
     bootodr.fast_odr()
 elif devmd == True and Fastst == True:
-    ask = input(+Fore.GREEN+"Fast Start "+Fore.RESET+"or "+Fore.RED+"Devoloper Mode"+Fore.RESET)
+    ask = input(+Fore.GREEN+"Fast Start "+Fore.RESET+"or "+Fore.RED+"Developer Mode"+Fore.RESET)
