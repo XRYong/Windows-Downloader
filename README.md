@@ -8,7 +8,7 @@ Windows Utility is a tool to help you download any windows edition from Windows 
 Windows 10 or later<br />
 4 GB of ram <br />
 A decent amount of hard disk (1 GB) <br />
-2C/3T Processor
+2C/4T Processor
 
 ## Recommended:
 8 GB of ram <br />
