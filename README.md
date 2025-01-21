@@ -6,13 +6,13 @@ Windows Utility is a tool to help you download any windows edition from Windows 
 
 ## Requirement:
 Windows 10 or later<br />
-4 GB of ram <br />
+2 GB of ram <br />
 A decent amount of hard disk (1 GB) <br />
-2C/4T Processor
+1C/2T Processor
 
 ## Recommended:
-8 GB of ram <br />
-10 GB or hard disk
+4 GB of ram <br />
+2 GB or hard disk
 
 ## Tutorial:
 https://youtu.be/TLQCZccivH0 <br />
